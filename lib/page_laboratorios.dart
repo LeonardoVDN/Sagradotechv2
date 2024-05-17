@@ -26,48 +26,51 @@ class _TelaLaboratoriosState extends State<TelaLaboratorios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF29005a),
       appBar: AppBar(
-        title: Text('Laboratórios'),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
         backgroundColor: Color(0xFF4B0082),
+        title: Text(
+          'Laboratórios',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            flex: 11,
-            child: PageView.builder(
-              controller: _pageController,
-              itemCount: imagens.length,
-              onPageChanged: (int index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-              itemBuilder: (BuildContext context, int index) {
-                return Image.asset(
-                  imagens[index],
-                  fit: BoxFit.cover,
-                );
-              },
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: 20),
+            Container(
+              height: 300, // Defina a altura desejada para o PageView
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: imagens.length,
+                onPageChanged: (int index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemBuilder: (BuildContext context, int index) {
+                  return Image.asset(
+                    imagens[index],
+                    fit: BoxFit.cover,
+                  );
+                },
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            color: Color(0xFF29005a),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: _buildPageIndicator(),
+            SizedBox(height: 20),
+            Container(
+              color: Color(0xFF29005a),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: _buildPageIndicator(),
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Expanded(
-            flex: 11,
-            child: Container(
-              color: Color(0xFF29005a), // Cor de fundo roxa mais clara
+            SizedBox(height: 20),
+            Container(
+              color: Color(0xFF29005a),
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Column(
@@ -77,7 +80,7 @@ class _TelaLaboratoriosState extends State<TelaLaboratorios> {
                       'Informações do Laboratório',
                       style: TextStyle(
                         fontSize: 24,
-                        color: Colors.white, // Cor do texto branco
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -85,18 +88,24 @@ class _TelaLaboratoriosState extends State<TelaLaboratorios> {
                       'Nome: Laboratório de Informática',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.white, // Cor do texto branco
+                        color: Colors.white,
                       ),
                     ),
+                    SizedBox(height: 10),
                     Text(
-                      'Localização: Edifício X, sala Y',
+                      'Localização: F008 - bloco F, piso inferior, próximo à loja de impressões\n'
+                          'F102 - bloco F, piso superior, último corredor do bloco, à esquerda, primeira sala\n'
+                          'F108 - bloco F, piso superior, último corredor do bloco, à esquerda, última sala',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
                       ),
                     ),
+                    SizedBox(height: 10),
                     Text(
-                      'Horário de Funcionamento: 8h às 18h',
+                      'Nossos LABS oferecem aos alunos a oportunidade de aplicar os conceitos teóricos aprendidos em sala de aula em ambientes práticos, fornecendo experiência hands-on com tecnologias e ferramentas relevantes para a área.\n',
+                      semanticsLabel:
+                      'São bem equipados com hardware atualizado, software relevante e acesso a recursos de computação de alto desempenho podem enriquecer significativamente a experiência educacional dos alunos.',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -106,8 +115,8 @@ class _TelaLaboratoriosState extends State<TelaLaboratorios> {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

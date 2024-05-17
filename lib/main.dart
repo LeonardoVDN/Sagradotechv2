@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'page_ciencia_computação.dart'; // Certifique-se de que este é o caminho correto para o seu arquivo da tela secundária
 import 'page_jogos_digitais.dart';
+import 'page_laboratorios.dart';
 import 'page_creditos.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -64,6 +66,8 @@ class TelaInicial extends StatelessWidget {
             botaoNavegacaoCC(context, 'Ciência da Computação', 'assets/imagens/imagem1.jpg'),
             SizedBox(height: 20),
             botaoNavegacaoJD(context, 'Jogos Digitais', 'assets/imagens/imagem2.jpg'),
+            SizedBox(height: 20),
+            botaoNavegacaoL(context, 'Laboratórios', 'assets/imagens/imagem2.jpg'),
             SizedBox(height: 20),
             botaoNavegacaoC(context, 'Créditos', 'assets/imagens/imagem3.jpg'),
             Spacer(),
@@ -307,4 +311,76 @@ class TelaInicial extends StatelessWidget {
       ),
     );
   }
+Widget botaoNavegacaoL(BuildContext context, String texto, String caminhoImagem) {
+  return SizedBox(
+    width: 400,
+    height: 100,
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 3,
+            blurRadius: 0,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          // Verifique o nome da classe para sua tela secundária no arquivo page_ciencia_computação.dart
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TelaLaboratorios()),
+          );
+        },
+        child: Row(
+          children: [
+            SizedBox(width: 40),
+            Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                child: Image.asset(
+                  caminhoImagem,
+                  width: 90,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SizedBox(width: 40),
+            Text(
+              texto,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+          ],
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          elevation: 0,
+          padding: EdgeInsets.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        ),
+      ),
+    ),
+  );
+}
 }
