@@ -40,7 +40,7 @@ class TelaInicial extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
                 boxShadow: [
@@ -62,13 +62,13 @@ class TelaInicial extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 70),
-            botaoNavegacaoCC(context, 'Ciência da Computação', 'assets/imagens/imagem1.jpg'),
             SizedBox(height: 20),
+            botaoNavegacaoCC(context, 'Ciência da Computação', 'assets/imagens/cdc1.jpg'),
+            SizedBox(height: 15),
             botaoNavegacaoJD(context, 'Jogos Digitais', 'assets/imagens/imagem2.jpg'),
-            SizedBox(height: 20),
-            botaoNavegacaoL(context, 'Laboratórios', 'assets/imagens/imagem2.jpg'),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
+            botaoNavegacaoL(context, 'Laboratórios', 'assets/imagens/imagem1.jpg'),
+            SizedBox(height: 15),
             botaoNavegacaoC(context, 'Créditos', 'assets/imagens/imagem3.jpg'),
             Spacer(),
             Container(
