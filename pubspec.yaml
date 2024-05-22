@@ -30,8 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  url_launcher: ^6.0.20
+  url_launcher: ^6.0.15
 
 
 
@@ -48,7 +47,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: 4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,7 +66,7 @@ flutter:
     - assets/imagens/cdc1b.jpg
     - assets/imagens/cdc1.jpg
     - assets/imagens/imagem1.jpg
-    - assets/imagens/topo.jpg
+    - assets/imagens/topo.jpeg
     - assets/imagens/imagem2.jpg
     - assets/imagens/imagem3.jpg
     - assets/imagens/LAB/UNI_7659.jpg

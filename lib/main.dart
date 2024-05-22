@@ -56,13 +56,13 @@ class TelaInicial extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(
-                  'assets/imagens/topo.jpg',
+                  'assets/imagens/topo.jpeg',
                   width: 400,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 60),
             botaoNavegacaoCC(context, 'Ciência da Computação', 'assets/imagens/cdc1.jpg'),
             SizedBox(height: 15),
             botaoNavegacaoJD(context, 'Jogos Digitais', 'assets/imagens/imagem2.jpg'),
