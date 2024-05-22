@@ -75,6 +75,8 @@ flutter:
     - assets/imagens/LAB/UNI_7698.jpg
     - assets/imagens/LAB/UNI_7700.jpg
     - assets/imagens/LAB/UNI_7704.jpg
+    - assets/imagens/LogoCComp.jpg
+    - assets/imagens/LogoCExten.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
